@@ -44,12 +44,14 @@ prog
   .argument("<tag>", "Specified the tag for image")
   .option("--cwd <cwd>", "Specified current working directory", prog.STRING)
   // TODO: support YML/YAML/js file as host file
+  // TODO: support a json host list to deploy to multiple servers
   .option(
     "--hostfile <hostfile>",
     "Specified the host json file.",
     prog.STRING,
     "dockercomposer.host.json"
   )
+  .option("--name <name>", "the name of server", prog.STRING)
   .option("--host <host>", "Specified the host", prog.STRING)
   .option("--port <port>", "Specified the port", prog.STRING)
   .option("--username <username>", "Specified the username", prog.STRING)
@@ -61,6 +63,7 @@ prog
       options: {
         cwd?: string;
         hostfile?: string;
+        name?: string;
         host?: string;
         port?: number;
         username?: string;
@@ -87,6 +90,7 @@ prog
         host = { ...host, ...json };
       } else {
         // read it from options and environment
+        host.name = options.name;
         host.path = options.path;
         host.host = options.host;
         host.port = options.port;

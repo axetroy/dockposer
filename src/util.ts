@@ -3,8 +3,8 @@ import { Host } from "./index";
 
 export function validaHost(host: Host): Host {
   const Article = struct({
+    name: "string?",
     path: "string",
-    name: "string",
     host: "string",
     port: "number",
     username: "string",

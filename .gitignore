@@ -62,3 +62,4 @@ typings/
 *.host.json
 dist
 .vscode
+package-lock.json

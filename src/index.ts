@@ -25,6 +25,7 @@ interface DeployOptions {
 }
 
 export interface Host {
+  name?: string;
   path: string;
   host: string;
   port: number;
@@ -81,7 +82,7 @@ class Composer {
     const { cwd } = this.options;
     const tag = await this.formatTag(options.tag);
 
-    const command = ["docker", "push", tag, cwd];
+    const command = ["docker", "push", tag];
 
     await exec(command.shift(), command, { cwd, stdio: "inherit" });
   }
@@ -96,8 +97,14 @@ class Composer {
 
     const connection = new SSH();
 
+    const address = server.host + ":" + server.port;
+
     console.log(
-      chalk.yellow(`Connect to ${chalk.green(server.host + ":" + server.port)}`)
+      chalk.yellow(
+        `Connect to ${chalk.green(
+          server.name ? `${server.name}(${address})` : address
+        )}`
+      )
     );
 
     process.on("exit", () => {
@@ -138,14 +145,15 @@ class Composer {
 
       // update docker-compose.yml
       await new Promise((resolve, reject) => {
-        const imageVersion = tag.match(/:(.*)$/)[1];
+        const [imageName, imageVersion] = tag.split(":");
         const inputFile = `${server.path}/docker-compose.yml`;
         const input = `cat ${inputFile}`;
         // custom name
         const filter =
-          "sed -E 's/(photon\\/t-mall-web:)([0-9.A-Za-z]+)/\\" +
-          `1${imageVersion}/g'`;
-        const outputFile = `${server.path}/docker-compose-1.yml`;
+          `sed -E 's/(${imageName
+            .replace(/\//g, "\\/")
+            .replace(/\./, ".")}:)([0-9.A-Za-z]+)/\\` + `1${imageVersion}/g'`;
+        const outputFile = `${server.path}/docker-compose.dockercomposer.yml`;
         const command = `${input} | ${filter} > ${outputFile} && mv -f ${outputFile} ${inputFile}`;
 
         connection.exec(command, (err, stream) => {
