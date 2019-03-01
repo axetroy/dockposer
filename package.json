@@ -1,5 +1,5 @@
 {
-  "name": "dockercomposer",
+  "name": "@axetroy/dockercomposer",
   "version": "0.1.0",
   "description": "docker-compose extra tool for easy deployment",
   "main": "./dist/index.js",

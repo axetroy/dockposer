@@ -9,7 +9,7 @@ docker-compose extra tool for easy deployment.
 ## Usage
 
 ```bash
-npm install dockercomposer -g
+npm install @axetroy/dockercomposer -g
 
 dockercomposer --help
 
