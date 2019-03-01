@@ -1,7 +1,7 @@
 # dockercomposer
 
 ![Node](https://img.shields.io/badge/node-%3E=7.6-blue.svg?style=flat-square)
-[![npm version](https://badge.fury.io/js/%40axetroy%2Fvm.svg)](https://badge.fury.io/js/%40axetroy%2Fvm)
+[![npm version](https://badge.fury.io/js/dockercomposer.svg)](https://badge.fury.io/js/dockercomposer)
 ![Size](https://github-size-badge.herokuapp.com/axetroy/dockercomposer.svg)
 
 docker-compose extra tool for easy deployment.
