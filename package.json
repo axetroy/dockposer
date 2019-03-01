@@ -15,8 +15,8 @@
     "type": "git",
     "url": "git+https://github.com/axetroy/dockercomposer.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "axetroy",
+  "license": "Apache 2.0",
   "bugs": {
     "url": "https://github.com/axetroy/dockercomposer/issues"
   },
