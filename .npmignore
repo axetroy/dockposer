@@ -1,0 +1,6 @@
+.vscode
+src
+*.lock
+tsconfig.json
+.gitignore
+*.host.json

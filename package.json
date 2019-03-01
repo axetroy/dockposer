@@ -1,0 +1,40 @@
+{
+  "name": "dockercomposer",
+  "version": "0.1.0",
+  "description": "docker-compose extra tool for easy deployment",
+  "main": "./dist/index.js",
+  "bin": {
+    "dockercomposer": "./bin/composer"
+  },
+  "scripts": {
+    "test": "npm run build",
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axetroy/dockercomposer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axetroy/dockercomposer/issues"
+  },
+  "homepage": "https://github.com/axetroy/dockercomposer#readme",
+  "dependencies": {
+    "caporal": "^1.1.0",
+    "chalk": "^2.4.2",
+    "execa": "^1.0.0",
+    "fs-extra": "^7.0.1",
+    "ssh2": "^0.8.2",
+    "superstruct": "^0.6.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^5.0.5",
+    "@types/node": "^11.9.6",
+    "@types/ssh2": "^0.5.38",
+    "@types/superstruct": "^0.5.0",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3333"
+  }
+}
