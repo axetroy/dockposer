@@ -46,8 +46,6 @@ prog
   .command("deploy", "Deploy image to remote host")
   .argument("<tag>", "Specified the tag for image")
   .option("--cwd <cwd>", "Specified current working directory", prog.STRING)
-  // TODO: support YML/YAML/js file as host file
-  // TODO: support a json host list to deploy to multiple servers
   .option(
     "--hostfile <hostfile>",
     "Specified the host json file.",
@@ -78,7 +76,7 @@ prog
       const json: Host = await fs.readJSON(hostPath);
       host = { ...host, ...json };
     } else {
-      // read it from options and environment
+      // read it from options
       host.name = options.name;
       host.path = options.path;
       host.host = options.host;
@@ -88,7 +86,12 @@ prog
     }
 
     // valida host schema
-    validaHost(host);
+    try {
+      validaHost(host);
+    } catch (err) {
+      console.log(`Invalid schema of host file.`);
+      throw err;
+    }
 
     return composer.deploy(args.tag, { server: host });
   });
