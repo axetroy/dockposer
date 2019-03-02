@@ -25,12 +25,12 @@ interface DeployOptions {
 }
 
 export interface Host {
-  name?: string;
-  path: string;
-  host: string;
-  port: number;
-  username: string;
-  password: string;
+  name?: string; // alias name for the server
+  path: string; // where is your `docker-compose.yml` in remote server
+  host: string; // host address
+  port: number; // SSH port
+  username: string; // username for the server
+  password: string; // password for the server
 }
 
 class Composer {
