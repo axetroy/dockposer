@@ -1,10 +1,10 @@
 {
-  "name": "@axetroy/dockercomposer",
-  "version": "0.1.1",
+  "name": "dockposer",
+  "version": "0.1.0",
   "description": "docker-compose extra tool for easy deployment",
   "main": "./dist/index.js",
   "bin": {
-    "dockercomposer": "./bin/composer"
+    "dockposer": "./bin/dockposer"
   },
   "scripts": {
     "test": "npm run build",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/axetroy/dockercomposer.git"
+    "url": "git+https://github.com/axetroy/dockposer.git"
   },
   "author": "axetroy",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/axetroy/dockercomposer/issues"
+    "url": "https://github.com/axetroy/dockposer/issues"
   },
-  "homepage": "https://github.com/axetroy/dockercomposer#readme",
+  "homepage": "https://github.com/axetroy/dockposer#readme",
   "dependencies": {
     "caporal": "^1.1.0",
     "chalk": "^2.4.2",
