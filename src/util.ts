@@ -1,5 +1,5 @@
 import { struct } from "superstruct";
-import { Host } from "./index";
+import { Host } from "./type";
 
 export function validaHost(host: Host): Host {
   const Article = struct({

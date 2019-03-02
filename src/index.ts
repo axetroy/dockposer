@@ -3,47 +3,24 @@ import * as exec from "execa";
 import * as fs from "fs-extra";
 import { Client as SSH } from "ssh2";
 import chalk from "chalk";
+import {
+  DockposerOptions,
+  DockposerBuildOptions,
+  DockposerDeployOptions
+} from "./type";
 
-interface Options {
-  cwd: string;
-}
-
-interface BuildOptions {
-  tag: string;
-  dockerfile?: string;
-  args?: string[];
-}
-
-interface PushOptions {
-  tag: string;
-}
-
-interface DeployOptions {
-  tag: string;
-  server: Host;
-  dir?: string; // the dir should upload to server/path
-}
-
-export interface Host {
-  name?: string; // alias name for the server
-  path: string; // where is your `docker-compose.yml` in remote server
-  host: string; // host address
-  port: number; // SSH port
-  username: string; // username for the server
-  password: string; // password for the server
-}
-
-class Composer {
-  constructor(public options: Options) {}
+export default class Dockposer {
+  constructor(public options: DockposerOptions) {}
   /**
    * Build image
+   * @param {string} tag
    * @param {BuildOptions} options
    * @memberof Composer
    */
-  public async build(options: BuildOptions) {
+  public async build(tag: string, options: DockposerBuildOptions) {
     const { cwd } = this.options;
     const dockerfile = options.dockerfile;
-    const tag = await this.formatTag(options.tag);
+    tag = await this.formatTag(tag);
     // ensure Dockerfile exist
     if (dockerfile) {
       const dockerFilePath = path.join(cwd, dockerfile);
@@ -75,25 +52,26 @@ class Composer {
   }
   /**
    * Push image to the registry
-   * @param {PushOptions} options
+   * @param {string} tag
    * @memberof Composer
    */
-  public async push(options: PushOptions) {
+  public async push(tag: string) {
     const { cwd } = this.options;
-    const tag = await this.formatTag(options.tag);
+    tag = await this.formatTag(tag);
 
     const command = ["docker", "push", tag];
 
     await exec(command.shift(), command, { cwd, stdio: "inherit" });
   }
   /**
-   * deploy image to
+   * deploy image to remote server
+   * @param {string} tag
    * @param {DeployOptions} options
    * @memberof Composer
    */
-  public async deploy(options: DeployOptions) {
+  public async deploy(tag: string, options: DockposerDeployOptions) {
     const { server } = options;
-    const tag = await this.formatTag(options.tag);
+    tag = await this.formatTag(tag);
 
     const connection = new SSH();
 
@@ -212,5 +190,3 @@ class Composer {
     return tag;
   }
 }
-
-export default Composer;
