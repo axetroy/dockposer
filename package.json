@@ -1,6 +1,6 @@
 {
   "name": "dockposer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "docker-compose extra tool for easy deployment",
   "main": "./dist/index.js",
   "bin": {
