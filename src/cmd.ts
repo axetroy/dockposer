@@ -50,7 +50,7 @@ prog
     "--hostfile <hostfile>",
     "Specified the host json file.",
     prog.STRING,
-    "dockercomposer.host.json"
+    "dockposer.host.json"
   )
   .option("--name <name>", "the name of server", prog.STRING)
   .option("--host <host>", "Specified the host", prog.STRING)

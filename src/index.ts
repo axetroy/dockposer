@@ -131,7 +131,7 @@ export default class Dockposer {
           `sed -E 's/(${imageName
             .replace(/\//g, "\\/")
             .replace(/\./, ".")}:)([0-9.A-Za-z]+)/\\` + `1${imageVersion}/g'`;
-        const outputFile = `${server.path}/docker-compose.dockercomposer.yml`;
+        const outputFile = `${server.path}/docker-compose.dockposer.yml`;
         const command = `${input} | ${filter} > ${outputFile} && mv -f ${outputFile} ${inputFile}`;
 
         connection.exec(command, (err, stream) => {
