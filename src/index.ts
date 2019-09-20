@@ -37,7 +37,6 @@ export default class Dockposer {
     const command = [
       "docker",
       "build",
-      "--no-cache",
       "--tag",
       tag,
       cwd,
