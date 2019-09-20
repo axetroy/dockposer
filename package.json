@@ -30,11 +30,11 @@
     "superstruct": "^0.6.0"
   },
   "devDependencies": {
-    "@types/fs-extra": "^5.0.5",
-    "@types/node": "^11.9.6",
-    "@types/ssh2": "^0.5.38",
-    "@types/superstruct": "^0.5.0",
-    "ts-node": "^8.0.2",
-    "typescript": "^3.3.3333"
+    "@types/fs-extra": "5.0.5",
+    "@types/node": "11.9.6",
+    "@types/ssh2": "0.5.38",
+    "@types/superstruct": "0.5.0",
+    "ts-node": "8.0.2",
+    "typescript": "3.3.3333"
   }
 }
