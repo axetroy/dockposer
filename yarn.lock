@@ -843,10 +843,10 @@ strip-eof@^1.0.0:
   resolved "https://registry.npmjs.org/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
   integrity sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=
 
-superstruct@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.npmjs.org/superstruct/-/superstruct-0.6.0.tgz#20d2073526cf683a57f258695e009c4a19134ad0"
-  integrity sha512-6Y+bh5oFXCMUmGGzcdwd8M2qXMWn9aH3Qu2wV8Cg/Lxu+3fTxJ0dTx54nKd/Sm3lSz3i901xVatzev7c/xN8Lg==
+superstruct@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/superstruct/-/superstruct-0.7.0.tgz#0bb8fd19173271ee86d5ef71d9e5af5eda1ae93d"
+  integrity sha512-dtqeKdBjiri64K1mPtc5yFSUcUEnK4r6I6GX9DXSb00aZ08Md7c8UvNRMCtXbi1P9t59KbmVwVrYLt1wUyNv9Q==
   dependencies:
     clone-deep "^2.0.1"
     kind-of "^6.0.1"
