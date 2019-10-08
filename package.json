@@ -27,7 +27,7 @@
     "execa": "^1.0.0",
     "fs-extra": "^8.0.0",
     "ssh2": "^0.8.2",
-    "superstruct": "^0.7.0"
+    "superstruct": "^0.8.0"
   },
   "devDependencies": {
     "@types/fs-extra": "8.0.0",
