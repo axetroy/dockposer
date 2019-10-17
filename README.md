@@ -1,6 +1,7 @@
 # dockposer
 
 ![Node](https://img.shields.io/badge/node-%3E=7.6-blue.svg?style=flat-square)
+[![DeepScan grade](https://deepscan.io/api/teams/5773/projects/7591/branches/79794/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=5773&pid=7591&bid=79794)
 [![npm version](https://badge.fury.io/js/dockposer.svg)](https://badge.fury.io/js/dockposer)
 ![Size](https://github-size-badge.herokuapp.com/axetroy/dockposer.svg)
 
