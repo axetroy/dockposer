@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "8.0.1",
-    "@types/node": "11.13.22",
+    "@types/node": "11.13.23",
     "@types/ssh2": "0.5.39",
     "@types/superstruct": "0.5.0",
     "ts-node": "8.4.1",
