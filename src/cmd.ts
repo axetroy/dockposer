@@ -1,6 +1,6 @@
 import * as path from "path";
 import * as fs from "fs-extra";
-import * as prog from "caporal";
+import prog from "caporal";
 import Dockposer from "./index";
 import { validaHost } from "./util";
 import {
