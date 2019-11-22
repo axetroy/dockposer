@@ -1,5 +1,5 @@
 import * as path from "path";
-import * as exec from "execa";
+import exec from "execa";
 import * as fs from "fs-extra";
 import { Client as SSH } from "ssh2";
 import chalk from "chalk";
@@ -127,9 +127,8 @@ export default class Dockposer {
         const input = `cat ${inputFile}`;
         // custom name
         const filter =
-          `sed -E 's/(${imageName
-            .replace(/\//g, "\\/")
-            .replace(/\./, ".")}:)([0-9.A-Za-z]+)/\\` + `1${imageVersion}/g'`;
+          `sed -E 's/(${imageName.replace(/\//g, "\\/")}:)([0-9.A-Za-z]+)/\\` +
+          `1${imageVersion}/g'`;
         const outputFile = `${server.path}/docker-compose.dockposer.yml`;
         const command = `${input} | ${filter} > ${outputFile} && mv -f ${outputFile} ${inputFile}`;
 
