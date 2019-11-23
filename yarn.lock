@@ -14,10 +14,15 @@
   dependencies:
     "@types/node" "*"
 
-"@types/node@*", "@types/node@12.12.11":
+"@types/node@*":
   version "12.12.11"
   resolved "https://registry.npmjs.org/@types/node/-/node-12.12.11.tgz#bec2961975888d964196bf0016a2f984d793d3ce"
   integrity sha512-O+x6uIpa6oMNTkPuHDa9MhMMehlxLAd5QcOvKRjAFsBVpeFWTOPnXbDvILvFgFFZfQ1xh1EZi1FbXxUix+zpsQ==
+
+"@types/node@12.12.12":
+  version "12.12.12"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.12.tgz#529bc3e73dbb35dd9e90b0a1c83606a9d3264bdb"
+  integrity sha512-MGuvYJrPU0HUwqF7LqvIj50RZUX23Z+m583KBygKYUZLlZ88n6w28XRNJRJgsHukLEnLz6w6SvxZoLgbr5wLqQ==
 
 "@types/ssh2-streams@*":
   version "0.1.6"
@@ -768,7 +773,7 @@ strip-final-newline@^2.0.0:
   resolved "https://registry.npmjs.org/strip-final-newline/-/strip-final-newline-2.0.0.tgz#89b852fb2fcbe936f6f4b3187afb0a12c1ab58ad"
   integrity sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==
 
-superstruct@*, superstruct@^0.8.2:
+superstruct@^0.8.2:
   version "0.8.2"
   resolved "https://registry.npmjs.org/superstruct/-/superstruct-0.8.2.tgz#63d2937b0e24210535ad47d3fd67b474e99bff52"
   integrity sha512-UW9XORtsYoe/iTj/pkOjG/rKozFkFDUbgj6iPiItvfIn9IaqVnp+v1iKKenC4AY280u6IIMXAtw2DAwHwTfY4g==
